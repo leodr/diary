@@ -14,10 +14,10 @@ impl<R: Runtime> WindowExt for Window<R> {
         unsafe {
             let window = self.ns_window().unwrap() as cocoa::base::id;
 
-            // let toolbar = NSToolbar::init_(window);
-            // toolbar.setShowsBaselineSeparator_(cocoa::base::NO);
+            let toolbar = NSToolbar::alloc(window).init_();
+            toolbar.setShowsBaselineSeparator_(cocoa::base::NO);
 
-            // window.setToolbar_(toolbar);
+            window.setToolbar_(toolbar);
 
             window.setTitleVisibility_(NSWindowTitleVisibility::NSWindowTitleHidden);
             window.setTitlebarAppearsTransparent_(cocoa::base::YES);
