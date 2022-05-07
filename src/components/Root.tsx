@@ -1,6 +1,13 @@
 import { Editor } from "./Editor";
+import Login from "./Login";
 
 export function Root() {
+  const showLogin = false;
+
+  if (showLogin) {
+    return <Login />;
+  }
+
   return (
     <div
       data-tauri-drag-region

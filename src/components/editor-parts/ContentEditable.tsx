@@ -1,7 +1,6 @@
 import LexicalContentEditable from "@lexical/react/LexicalContentEditable";
 import { motion, useMotionValue } from "framer-motion";
 import { useLayoutEffect } from "react";
-import { classNames } from "../../utils/classnames";
 
 export function ContentEditable() {
   const minHeight = useMotionValue(520);
@@ -20,11 +19,7 @@ export function ContentEditable() {
 
   return (
     <MotionLexicalContentEditable
-      className={classNames(
-        "outline-none",
-        "text-gray-700 selection:text-gray-50 selection:bg-gray-900",
-        "dark:text-gray-200 dark:selection:bg-gray-100 dark:selection:text-gray-900"
-      )}
+      className="select-auto outline-none text-gray-700 dark:text-gray-200"
       style={{ minHeight }}
     />
   );
