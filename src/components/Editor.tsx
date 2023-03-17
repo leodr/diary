@@ -1,8 +1,8 @@
-import LexicalComposer from "@lexical/react/LexicalComposer";
+import { LexicalComposer } from "@lexical/react/LexicalComposer";
+import { PlainTextPlugin } from "@lexical/react/LexicalPlainTextPlugin";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import LexicalOnChangePlugin from "@lexical/react/LexicalOnChangePlugin";
-import LexicalPlainTextPlugin from "@lexical/react/LexicalPlainTextPlugin";
 import { $getRoot, EditorState } from "lexical";
 import { useEffect } from "react";
 import { ContentEditable } from "./editor-parts/ContentEditable";
@@ -54,7 +54,7 @@ export function Editor() {
 
   return (
     <LexicalComposer initialConfig={initialConfig}>
-      <LexicalPlainTextPlugin
+      <PlainTextPlugin
         contentEditable={<ContentEditable />}
         placeholder={<EditorPlaceholder />}
       />
